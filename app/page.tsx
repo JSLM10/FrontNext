@@ -1,103 +1,140 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Flame, Sword, Skull, Zap, AlertTriangle } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
+      {/* Hero Section con animación */}
+      <section className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+        {/* Efecto de fuego animado en el fondo */}
+        <div className="absolute inset-0 bg-[url('/flames.gif')] bg-cover bg-center opacity-20 z-0" />
+        
+        {/* Contenido principal */}
+        <div className="relative z-10 px-4">
+          {/* Logo/Título con efecto de sangre */}
+          <h1 className="text-7xl md:text-9xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-red-500 tracking-tight">
+            LUCHA MUERE
+          </h1>
+          
+          {/* Subtítulo impactante */}
+          <p className="text-xl md:text-3xl font-medium mb-8 text-gray-300 max-w-3xl mx-auto">
+            <span className="text-red-500">EL ÚNICO TORNEO</span> DONDE LOS PERDEDORES NO VUELVEN A CASA
+          </p>
+          
+          {/* Llamado a la acción */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild className="bg-red-900 hover:bg-red-800 text-white py-6 px-8 text-lg">
+              <Link href="/dashboard">
+                <Flame className="mr-2 h-6 w-6" />
+                ENTRAR AL INFIERNO
+              </Link>
+            </Button>
+            
+            <Button asChild variant="outline" className="border-red-900 text-red-400 hover:bg-red-950 py-6 px-8 text-lg">
+              <Link href="/about">
+                CONOCE LAS REGLAS
+              </Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        {/* Efecto de scroll indicador */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-red-600 rounded-full flex justify-center">
+            <div className="w-1 h-2 bg-red-600 rounded-full mt-2 animate-scroll"></div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Sección de citas impactantes */}
+      <section className="py-20 bg-black px-4">
+        <div className="max-w-4xl mx-auto">
+          <blockquote className="text-2xl md:text-4xl font-bold text-center text-white">
+            <span className="text-red-600">"</span> 
+            En este mundo solo hay dos tipos de personas: los que luchan y los que mueren. 
+            <span className="text-red-600">"</span>
+          </blockquote>
+          <p className="text-right mt-6 text-red-400 text-lg">— Carolina la Conquistadora</p>
+        </div>
+      </section>
+      
+      {/* Sección de próximos combates (sin apuestas) */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
+            <span className="text-red-600">PRÓXIMOS</span> COMBATES
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <FightCard 
+              fighters={["El Desollador", "Reina del Código"]} 
+              date="2023-11-15"
+              lethal={true}
+            />
+            <FightCard 
+              fighters={["Profesor Fugado", "Máquina de Matar"]} 
+              date="2023-11-18"
+              lethal={false}
+            />
+            <FightCard 
+              fighters={["Torturador Serial", "Niña Pesadilla"]} 
+              date="2023-11-22"
+              lethal={true}
+            />
+          </div>
+        </div>
+      </section>
+      
+      {/* Sección final de advertencia */}
+      <section className="py-16 bg-red-950/50 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/blood-texture.png')] opacity-20"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white">
+            <span className="text-red-500">ADVERTENCIA</span> DE CAROLINA
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Este sistema está protegido por la guardia pretoriana de Carolina. Cualquier intento de acceso no autorizado será castigado con la participación inmediata en el próximo torneo mortal.
+          </p>
+          <div className="animate-pulse">
+            <Button className="bg-black text-red-500 hover:bg-red-900 hover:text-white border border-red-900 py-6 px-8 text-lg">
+              <AlertTriangle className="mr-2 h-6 w-6" />
+              ENTRAR BAJO TU PROPIO RIESGO
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// Componente para tarjetas de combate (sin odds ni botón de apuestas)
+function FightCard({ fighters, date, lethal }: { fighters: [string, string], date: string, lethal: boolean }) {
+  return (
+    <div className="bg-black/70 border border-red-900/50 rounded-xl overflow-hidden hover:border-red-600 transition-all hover:scale-105">
+      <div className="p-6">
+        <div className="flex flex-col items-center mb-6">
+          <span className="text-xl font-bold text-white">{fighters[0]}</span>
+          <div className="my-2 flex items-center">
+            <div className="h-px w-8 bg-red-500"></div>
+            <span className="mx-3 text-red-500 font-bold">VS</span>
+            <div className="h-px w-8 bg-red-500"></div>
+          </div>
+          <span className="text-xl font-bold text-white">{fighters[1]}</span>
+        </div>
+        
+        <div className="flex justify-between text-sm">
+          <span className="text-gray-400">Fecha:</span>
+          <span className="text-white">{new Date(date).toLocaleDateString()}</span>
+        </div>
+        
+        <div className="flex justify-between text-sm mt-4">
+          <span className="text-gray-400">Tipo:</span>
+          <span className={lethal ? "text-red-500" : "text-green-500"}>
+            {lethal ? "COMBATE MORTAL" : "SIN MUERTE"}
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
