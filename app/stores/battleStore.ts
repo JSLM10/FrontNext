@@ -25,7 +25,7 @@ export const useBattleStore = create<BattleState>((set) => ({
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Failed to fetch battles";
       set({ error: errorMessage, loading: false });
-      throw error; // Re-lanzamos el error para manejo adicional si es necesario
+      throw error; 
     }
   },
   
