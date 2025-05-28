@@ -1,7 +1,6 @@
 "use client";
 
 import { useContestantStore } from "../../stores/contestantStore";
-import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ContestantStats() {

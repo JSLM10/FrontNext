@@ -3,8 +3,8 @@ import { create } from "zustand";
 interface AppState {
   darkMode: boolean;
   toggleDarkMode: () => void;
-  currentUser: any;
-  setCurrentUser: (user: any) => void;
+  currentUser: unknown;
+  setCurrentUser: (user: unknown) => void;
 }
 
 export const useAppStore = create<AppState>((set) => ({
