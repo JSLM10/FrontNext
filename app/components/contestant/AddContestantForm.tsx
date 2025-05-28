@@ -41,13 +41,13 @@ export function AddContestantForm() {
       name: "",
       nickname: "",
       origin: "",
-      dictatorId: "", // obligatorio
+      dictatorId: "",
       strength: 50,
       agility: 50,
       wins: 0,
       losses: 0,
       status: "Alive",
-      created_at: new Date().toISOString(), // lo ponemos al crear
+      created_at: new Date().toISOString(), 
     },
   });
 
@@ -59,7 +59,7 @@ export function AddContestantForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-white">
-        {/* Nombre */}
+       
         <FormField
           control={form.control}
           name="name"
@@ -74,7 +74,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Apodo */}
+        
         <FormField
           control={form.control}
           name="nickname"
@@ -89,7 +89,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Origen */}
+       
         <FormField
           control={form.control}
           name="origin"
@@ -104,7 +104,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Dictador asociado */}
+       
         <FormField
           control={form.control}
           name="dictatorId"
@@ -133,7 +133,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Strength */}
+        
         <FormField
           control={form.control}
           name="strength"
@@ -151,7 +151,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Agility */}
+        
         <FormField
           control={form.control}
           name="agility"
@@ -170,7 +170,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Wins */}
+       
         <FormField
           control={form.control}
           name="wins"
@@ -186,7 +186,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Losses */}
+        
         <FormField
           control={form.control}
           name="losses"
@@ -202,7 +202,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Estado */}
+       
         <FormField
           control={form.control}
           name="status"
@@ -228,7 +228,7 @@ export function AddContestantForm() {
           )}
         />
 
-        {/* Botón */}
+        
         <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white py-2">
           Añadir Participante
         </Button>

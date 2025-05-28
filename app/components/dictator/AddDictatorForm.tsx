@@ -45,7 +45,7 @@ export function AddDictatorForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 text-white">
-        {/* Nombre */}
+        
         <FormField
           control={form.control}
           name="name"
@@ -60,7 +60,7 @@ export function AddDictatorForm() {
           )}
         />
 
-        {/* Territorio */}
+        
         <FormField
           control={form.control}
           name="territory"
@@ -75,7 +75,7 @@ export function AddDictatorForm() {
           )}
         />
 
-        {/* Número de esclavos */}
+        
         <FormField
           control={form.control}
           name="number_of_slaves"
@@ -96,7 +96,7 @@ export function AddDictatorForm() {
           )}
         />
 
-        {/* Lealtad */}
+        
         <FormField
           control={form.control}
           name="loyalty_to_carolina"

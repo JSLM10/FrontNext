@@ -1,4 +1,4 @@
-// src/schemas/Dictator/dictator.ts
+
 import { z } from "zod";
 
 export const DictatorSchema = z.object({

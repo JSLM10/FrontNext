@@ -12,7 +12,7 @@ export default function Dashboard() {
 
   return (
     <main className="min-h-screen bg-black py-8 px-4 sm:px-6 lg:px-8 space-y-10">
-      {/* Título principal */}
+      
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-400">
@@ -61,7 +61,7 @@ export default function Dashboard() {
         <TransactionLog />
       </section>
 
-      {/* Nota al pie */}
+      
       <div className="text-center text-sm text-gray-400 mt-12">
         <p>Sistema de gestión del torneo LUCHA MUERE - Todos los derechos pertenecen a Carolina la Conquistadora</p>
       </div>

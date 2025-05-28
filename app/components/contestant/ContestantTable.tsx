@@ -1,6 +1,6 @@
 "use client";
 
-// Update the path below to the correct relative path if needed, for example:
+
 import { useContestantStore } from "../../stores/contestantStore";
 import { useEffect } from "react";
 import {

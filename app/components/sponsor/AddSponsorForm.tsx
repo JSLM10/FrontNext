@@ -50,7 +50,7 @@ export function AddSponsorForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 text-white">
-        {/* Nombre de la Empresa */}
+        
         <FormField
           control={form.control}
           name="company_name"
@@ -69,7 +69,7 @@ export function AddSponsorForm() {
           )}
         />
 
-        {/* Artículos Donados */}
+        
         <FormField
           control={form.control}
           name="donated_items"
@@ -88,7 +88,7 @@ export function AddSponsorForm() {
           )}
         />
 
-        {/* Luchador Patrocinado */}
+      
         <FormField
           control={form.control}
           name="preferred_fighter"
