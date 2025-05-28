@@ -5,24 +5,24 @@ import { Flame, Sword, Skull, Zap, AlertTriangle } from "lucide-react";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-      {/* Hero Section con animación */}
+      
       <section className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-        {/* Efecto de fuego animado en el fondo */}
+        
         <div className="absolute inset-0 bg-[url('/flames.gif')] bg-cover bg-center opacity-20 z-0" />
         
-        {/* Contenido principal */}
+        
         <div className="relative z-10 px-4">
-          {/* Logo/Título con efecto de sangre */}
+          
           <h1 className="text-7xl md:text-9xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-red-500 tracking-tight">
             LUCHA MUERE
           </h1>
           
-          {/* Subtítulo impactante */}
+          
           <p className="text-xl md:text-3xl font-medium mb-8 text-gray-300 max-w-3xl mx-auto">
             <span className="text-red-500">EL ÚNICO TORNEO</span> DONDE LOS PERDEDORES NO VUELVEN A CASA
           </p>
           
-          {/* Llamado a la acción */}
+          
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="bg-red-900 hover:bg-red-800 text-white py-6 px-8 text-lg">
               <Link href="/dashboard">
@@ -59,32 +59,7 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Sección de próximos combates (sin apuestas) */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            <span className="text-red-600">PRÓXIMOS</span> COMBATES
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <FightCard 
-              fighters={["El Desollador", "Reina del Código"]} 
-              date="2023-11-15"
-              lethal={true}
-            />
-            <FightCard 
-              fighters={["Profesor Fugado", "Máquina de Matar"]} 
-              date="2023-11-18"
-              lethal={false}
-            />
-            <FightCard 
-              fighters={["Torturador Serial", "Niña Pesadilla"]} 
-              date="2023-11-22"
-              lethal={true}
-            />
-          </div>
-        </div>
-      </section>
+     
       
       {/* Sección final de advertencia */}
       <section className="py-16 bg-red-950/50 px-4 relative overflow-hidden">
@@ -108,7 +83,7 @@ export default function Home() {
   );
 }
 
-// Componente para tarjetas de combate (sin odds ni botón de apuestas)
+
 function FightCard({ fighters, date, lethal }: { fighters: [string, string], date: string, lethal: boolean }) {
   return (
     <div className="bg-black/70 border border-red-900/50 rounded-xl overflow-hidden hover:border-red-600 transition-all hover:scale-105">
