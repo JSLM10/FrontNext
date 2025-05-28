@@ -16,7 +16,7 @@ export default function DictatorsPage() {
 
   return (
     <main className="min-h-screen bg-black py-8 px-4 sm:px-6 lg:px-8 space-y-8">
-      {/* Header Section */}
+      
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-white">
@@ -51,7 +51,7 @@ export default function DictatorsPage() {
 
         {/* Sidebar */}
         <div className="space-y-6">
-          {/* Add Dictator Form */}
+          
           <div className="bg-gray-900/80 p-6 rounded-xl border border-red-600 shadow-lg">
             <h2 className="text-2xl font-bold text-red-500 mb-6">AÑADIR DICTADOR</h2>
             <AddDictatorForm />
@@ -61,7 +61,7 @@ export default function DictatorsPage() {
         </div>
       </div>
 
-      {/* Footer Note */}
+      
       <div className="text-center text-sm text-gray-400 mt-12">
         <p>La deslealtad será castigada con la máxima severidad</p>
       </div>

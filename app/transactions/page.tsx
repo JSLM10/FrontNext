@@ -36,7 +36,7 @@ export default function TransactionPage() {
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Transaction Log */}
+        
         <div className="lg:col-span-2">
           <div className="bg-gray-900/80 p-6 rounded-xl border border-red-600 shadow-lg">
             <div className="flex justify-between items-center mb-6">
@@ -57,12 +57,12 @@ export default function TransactionPage() {
             <AddTransactionForm />
           </div>
 
-          {/* Market Controls */}
+          {/* Transaction Controls */}
           
         </div>
       </div>
 
-      {/* Footer Note */}
+     
       <div className="text-center text-sm text-gray-400 mt-12">
         <p>Todas las transacciones son monitoreadas por la guardia de Carolina</p>
       </div>

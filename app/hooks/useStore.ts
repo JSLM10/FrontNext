@@ -8,7 +8,7 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>((set) => ({
-  darkMode: true, // Modo oscuro por defecto
+  darkMode: true, 
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
   currentUser: null,
   setCurrentUser: (user) => set({ currentUser: user }),

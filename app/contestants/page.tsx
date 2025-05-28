@@ -32,7 +32,7 @@ export default function ContestantsPage() {
         </div>
       </div>
 
-      {/* Stats Cards */}
+     
       <div className="text-white">
         <ContestantStats />
       </div>
@@ -56,7 +56,7 @@ export default function ContestantsPage() {
           </div>
         </div>
 
-        {/* Add Contestant Form */}
+        
         <div className="bg-gray-900 p-6 rounded-xl border border-red-600 shadow-lg">
           <h2 className="text-2xl font-bold text-red-500 mb-6">
             AÑADIR CONTENDIENTE
@@ -65,7 +65,7 @@ export default function ContestantsPage() {
         </div>
       </div>
 
-      {/* Footer Note */}
+     
       <div className="text-center text-sm text-gray-300 mt-12">
         <p>Recuerda: Carolina siempre está vigilando. Cada error será castigado.</p>
       </div>

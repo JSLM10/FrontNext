@@ -12,7 +12,7 @@ const navItems = [
 export const SideBar = () => {
   return (
     <div className="fixed inset-y-0 left-0 z-50 flex flex-col w-64 h-screen bg-gray-900 border-r border-gray-700 text-white p-4 shadow-xl">
-      {/* Logo/Título */}
+      
       <div className="mb-8 p-4 bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-lg">
         <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-blue-200">
           The Rise of Carolina the Conqueror
@@ -35,7 +35,7 @@ export const SideBar = () => {
         </ul>
       </nav>
 
-      {/* Parte responsive */}
+      
       <div className="md:hidden mt-auto">
         <Sheet>
           <SheetTrigger asChild>

@@ -33,7 +33,7 @@ export default function BattlesPage() {
         </div>
       </div>
 
-      {/* Stats Section */}
+      
       <div className="text-white">
         <BattleStats />
       </div>

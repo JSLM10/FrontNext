@@ -48,7 +48,7 @@ export function AddTransactionForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-white">
-        {/* Buyer ID */}
+        
         <FormField
           control={form.control}
           name="buyer_id"
@@ -78,7 +78,7 @@ export function AddTransactionForm() {
           )}
         />
 
-        {/* Seller ID */}
+        
         <FormField
           control={form.control}
           name="seller_id"
@@ -108,7 +108,7 @@ export function AddTransactionForm() {
           )}
         />
 
-        {/* Item */}
+        
         <FormField
           control={form.control}
           name="item"
@@ -127,7 +127,7 @@ export function AddTransactionForm() {
           )}
         />
 
-        {/* Amount */}
+        
         <FormField
           control={form.control}
           name="amount"

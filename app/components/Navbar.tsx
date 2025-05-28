@@ -19,12 +19,12 @@ export function Navbar() {
     { href: "/transactions", label: "Black Market" },
   ];
 
-  // Estilo base para los textos blancos con sombra roja
+  
   const textStyle = "text-white drop-shadow-[0_1px_1px_rgba(220,38,38,0.5)]";
 
   return (
     <>
-      {/* Desktop Navbar */}
+      
       <div className="hidden md:flex items-center space-x-2">
         {links.map((link) => (
           <Link key={link.href} href={link.href}>
@@ -42,7 +42,7 @@ export function Navbar() {
         ))}
       </div>
 
-      {/* Mobile Menu Button */}
+      
       <div className="md:hidden">
         <Button
           variant="ghost"
@@ -57,7 +57,7 @@ export function Navbar() {
         </Button>
       </div>
 
-      {/* Mobile Menu */}
+      
       {mobileMenuOpen && (
         <div className="absolute md:hidden top-16 right-0 w-full bg-gray-900 border-t border-rust shadow-lg shadow-blood/20 z-40">
           <div className="flex flex-col space-y-2 p-4">

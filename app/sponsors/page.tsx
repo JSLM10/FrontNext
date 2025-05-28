@@ -54,7 +54,7 @@ export default function SponsorsPage() {
 
         {/* Sidebar */}
         <div className="space-y-6">
-          {/* Add Sponsor Form */}
+          
           <div className="bg-gray-900/80 p-6 rounded-xl border border-red-600 shadow-lg">
             <h2 className="text-2xl font-bold text-red-500 mb-6">REGISTRAR NUEVO PATROCINADOR</h2>
             <AddSponsorForm />

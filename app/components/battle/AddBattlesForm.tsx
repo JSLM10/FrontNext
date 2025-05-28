@@ -24,14 +24,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// Esquema del formulario corregido - death_occurred debe ser boolean, no opcional
+
 const formSchema = BaseBattleSchema.omit({
   id: true,
   injuries: true,
   winner_id: true,
 }).extend({
   date: z.string().nonempty("La fecha es requerida"),
-  death_occurred: z.boolean(), // Asegurar que sea boolean, no opcional
+  death_occurred: z.boolean(), 
 }).refine(
   (data) => data.contestant_1_id !== data.contestant_2_id,
   {
@@ -77,7 +77,6 @@ export function AddBattlesForm() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 text-white">
 
-        {/* Contendiente 1 */}
         <FormField
           control={form.control}
           name="contestant_1_id"
@@ -111,7 +110,7 @@ export function AddBattlesForm() {
           )}
         />
 
-        {/* Contendiente 2 */}
+        
         <FormField
           control={form.control}
           name="contestant_2_id"
@@ -145,7 +144,7 @@ export function AddBattlesForm() {
           )}
         />
 
-        {/* Fecha */}
+       
         <FormField
           control={form.control}
           name="date"
@@ -164,7 +163,7 @@ export function AddBattlesForm() {
           )}
         />
 
-        {/* Combate a muerte */}
+        
         <FormField
           control={form.control}
           name="death_occurred"

@@ -11,4 +11,3 @@ export const createContestant = async (contestant: Omit<Contestant, "id">) => {
   return response.data;
 };
 
-// Más funciones CRUD...
