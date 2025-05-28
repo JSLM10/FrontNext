@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Flame, Sword, Skull, Zap, AlertTriangle } from "lucide-react";
+import { Flame, AlertTriangle } from "lucide-react";
 
 export default function Home() {
   return (
@@ -51,10 +51,11 @@ export default function Home() {
       <section className="py-20 bg-black px-4">
         <div className="max-w-4xl mx-auto">
           <blockquote className="text-2xl md:text-4xl font-bold text-center text-white">
-            <span className="text-red-600">"</span> 
-            En este mundo solo hay dos tipos de personas: los que luchan y los que mueren. 
-            <span className="text-red-600">"</span>
+            <span className="text-red-600">&ldquo;</span> 
+              En este mundo solo hay dos tipos de personas: los que luchan y los que mueren. 
+            <span className="text-red-600">&rdquo;</span>
           </blockquote>
+
           <p className="text-right mt-6 text-red-400 text-lg">— Carolina la Conquistadora</p>
         </div>
       </section>

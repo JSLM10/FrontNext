@@ -5,7 +5,6 @@ import { AddBattlesForm } from "../components/battle/AddBattlesForm";
 import { BattleStats } from "../components/battle/BattleStats";
 import { useBattleStore } from "../stores/battleStore";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
 
 export default function BattlesPage() {
   const { fetchBattles } = useBattleStore();

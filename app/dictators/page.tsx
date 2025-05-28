@@ -5,7 +5,6 @@ import { AddDictatorForm } from "../components/dictator/AddDictatorForm";
 import { DictatorStats } from "../components/dictator/DictatorStats";
 import { useDictatorStore } from "../stores/dictatorStore";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
 
 export default function DictatorsPage() {
   const { fetchDictators } = useDictatorStore();

@@ -80,7 +80,7 @@ export default function AboutPage() {
             ADVERTENCIA DE CAROLINA
           </h2>
           <p className="text-xl mb-8">
-            "Este sistema es mi creación perfecta. Cualquier intento de sabotaje o acceso no autorizado será castigado con participación inmediata en el próximo torneo. No hay excepciones."
+            &quot;Este sistema es mi creación perfecta. Cualquier intento de sabotaje o acceso no autorizado será castigado con participación inmediata en el próximo torneo. No hay excepciones.&quot;
           </p>
           <Button asChild variant="outline" className="border-red-700 text-red-400 hover:bg-red-900/50 py-6 px-8 text-lg">
             <Link href="/">

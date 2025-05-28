@@ -2,7 +2,7 @@
 
 import { useTransactionStore } from "../../stores/transactionStore";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { DollarSign, AlertCircle, CheckCircle, XCircle } from "lucide-react";
+import { DollarSign, AlertCircle, CheckCircle } from "lucide-react";
 
 export function TransactionStats() {
   const { transactions } = useTransactionStore();
