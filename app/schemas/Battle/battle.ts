@@ -5,15 +5,9 @@ export const BattleSchema = z.object({
   contestant_1_id: z.string().uuid(),
   contestant_2_id: z.string().uuid(),
   winner_id: z.string().uuid().nullable(),
-  death_occurred: z.boolean(),
-  injuries: z.string().nullable(),
-
-  date: z
-    .string()
-    .nonempty("La fecha es obligatoria")
-    .refine(val => !isNaN(Date.parse(val)), {
-      message: "Formato de fecha inválido",
-    }),
+  death_occurred: z.boolean().default(false),
+  injuries: z.string().nullable().default(null),
+  date: z.coerce.date() // Acepta string, number o Date y lo convierte a Date
 });
 
 export type Battle = z.infer<typeof BattleSchema>;

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const MarketTransactionSchema = z.object({
+export const TransactionSchema = z.object({
   id: z.string().uuid(),
   buyer_id: z.string().uuid(),
   seller_id: z.string().uuid(),
@@ -9,4 +9,4 @@ export const MarketTransactionSchema = z.object({
   status: z.enum(["Completed", "Failed", "Discovered"]),
 });
 
-export type MarketTransaction = z.infer<typeof MarketTransactionSchema>;
+export type Transaction = z.infer<typeof TransactionSchema>;

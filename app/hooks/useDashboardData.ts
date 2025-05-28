@@ -3,14 +3,14 @@ import { useContestantStore } from "../stores/contestantStore";
 import { useBattleStore } from "../stores/battleStore";
 import { useDictatorStore } from "../stores/dictatorStore";
 import { useSponsorStore } from "../stores/sponsorStore";
-import { useMarketStore } from "../stores/transactionStore";
+import { useTransactionStore } from "../stores/transactionStore";
 
 export const useDashboardData = () => {
   const { fetchContestants } = useContestantStore();
   const { fetchBattles } = useBattleStore();
   const { fetchDictators } = useDictatorStore();
   const { fetchSponsors } = useSponsorStore();
-  const { fetchTransactions } = useMarketStore();
+  const { fetchTransactions } = useTransactionStore();
 
   useEffect(() => {
     fetchContestants();

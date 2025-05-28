@@ -1,6 +1,6 @@
 "use client";
 
-import { useMarketStore } from "../../stores/transactionStore";
+import { useTransactionStore } from "../../stores/transactionStore";
 import {
   Table,
   TableBody,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/table";
 
 export function TransactionLog() {
-  const { transactions } = useMarketStore();
+  const { transactions } = useTransactionStore();
 
   const getStatusColor = (status: string) => {
     switch (status) {

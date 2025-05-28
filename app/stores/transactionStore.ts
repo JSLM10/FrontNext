@@ -1,20 +1,20 @@
 import { create } from "zustand";
-import { MarketTransaction } from "../schemas/Transaction/transaction";
+import { Transaction } from "../schemas/Transaction/transaction";
 import { getTransactions, createTransaction, updateTransactionStatus } from "../services/transactionService";
 
-interface MarketState {
-  transactions: MarketTransaction[];
+interface TransactionState {
+  transactions: Transaction[];
   loading: boolean;
   error: string | null;
   fetchTransactions: () => Promise<void>;
-  addTransaction: (transaction: Omit<MarketTransaction, "id">) => Promise<void>;
+  addTransaction: (transaction: Omit<Transaction, "id">) => Promise<void>;
   changeTransactionStatus: (
     transactionId: string,
     status: "Completed" | "Failed" | "Discovered"
   ) => Promise<void>;
 }
 
-export const useMarketStore = create<MarketState>((set) => ({
+export const useTransactionStore = create<TransactionState>((set) => ({
   transactions: [],
   loading: false,
   error: null,

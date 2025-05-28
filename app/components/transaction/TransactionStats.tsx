@@ -1,11 +1,11 @@
 "use client";
 
-import { useMarketStore } from "../../stores/transactionStore";
+import { useTransactionStore } from "../../stores/transactionStore";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DollarSign, AlertCircle, CheckCircle, XCircle } from "lucide-react";
 
-export function MarketStats() {
-  const { transactions } = useMarketStore();
+export function TransactionStats() {
+  const { transactions } = useTransactionStore();
 
   const totalTransactions = transactions.length;
   const completedTransactions = transactions.filter(t => t.status === "Completed").length;

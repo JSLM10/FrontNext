@@ -1,13 +1,13 @@
 import api from "../api/apiClient";
-import { MarketTransaction } from "../schemas/Transaction/transaction";
+import { Transaction } from "../schemas/Transaction/transaction";
 
-export const getTransactions = async (): Promise<MarketTransaction[]> => {
+export const getTransactions = async (): Promise<Transaction[]> => {
   const response = await api.get("/transactions");
   return response.data;
 };
 
 export const createTransaction = async (
-  transaction: Omit<MarketTransaction, "id">
+  transaction: Omit<Transaction, "id">
 ) => {
   const response = await api.post("/transactions", transaction);
   return response.data;

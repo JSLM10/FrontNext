@@ -2,9 +2,9 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MarketTransactionSchema } from "../../schemas/Transaction/transaction";
+import { TransactionSchema } from "../../schemas/Transaction/transaction";
 import { z } from "zod";
-import { useMarketStore } from "../../stores/transactionStore";
+import { useTransactionStore } from "../../stores/transactionStore";
 import { useDictatorStore } from "../../stores/dictatorStore";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,10 +24,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const formSchema = MarketTransactionSchema.omit({ id: true, status: true });
+const formSchema = TransactionSchema.omit({ id: true, status: true });
 
 export function AddTransactionForm() {
-  const { addTransaction } = useMarketStore();
+  const { addTransaction } = useTransactionStore();
   const { dictators } = useDictatorStore();
 
   const form = useForm<z.infer<typeof formSchema>>({

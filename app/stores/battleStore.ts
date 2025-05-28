@@ -8,24 +8,29 @@ interface BattleState {
   error: string | null;
   fetchBattles: () => Promise<void>;
   addBattle: (battle: Omit<Battle, "id">) => Promise<void>;
-  scheduleNewBattle: (contestant1Id: string, contestant2Id: string, date: string) => Promise<void>;
+  scheduleNewBattle: (contestant1Id: string, contestant2Id: string, date: Date) => Promise<void>;
+  clearError: () => void;
 }
 
 export const useBattleStore = create<BattleState>((set) => ({
   battles: [],
   loading: false,
   error: null,
+  
   fetchBattles: async () => {
-    set({ loading: true });
+    set({ loading: true, error: null });
     try {
       const battles = await getBattles();
       set({ battles, loading: false });
     } catch (error) {
-      set({ error: "Failed to fetch battles", loading: false });
+      const errorMessage = error instanceof Error ? error.message : "Failed to fetch battles";
+      set({ error: errorMessage, loading: false });
+      throw error; // Re-lanzamos el error para manejo adicional si es necesario
     }
   },
+  
   addBattle: async (battle) => {
-    set({ loading: true });
+    set({ loading: true, error: null });
     try {
       const newBattle = await createBattle(battle);
       set((state) => ({
@@ -33,11 +38,14 @@ export const useBattleStore = create<BattleState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      set({ error: "Failed to add battle", loading: false });
+      const errorMessage = error instanceof Error ? error.message : "Failed to add battle";
+      set({ error: errorMessage, loading: false });
+      throw error;
     }
   },
+  
   scheduleNewBattle: async (contestant1Id, contestant2Id, date) => {
-    set({ loading: true });
+    set({ loading: true, error: null });
     try {
       const newBattle = await scheduleBattle(contestant1Id, contestant2Id, date);
       set((state) => ({
@@ -45,7 +53,11 @@ export const useBattleStore = create<BattleState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      set({ error: "Failed to schedule battle", loading: false });
+      const errorMessage = error instanceof Error ? error.message : "Failed to schedule battle";
+      set({ error: errorMessage, loading: false });
+      throw error;
     }
   },
+  
+  clearError: () => set({ error: null }),
 }));

@@ -2,13 +2,13 @@
 
 import { TransactionLog } from "../components/transaction/Transactionlog";
 import { AddTransactionForm } from "../components/transaction/AddTransactionForm";
-import { MarketStats } from "../components/transaction/TransactionStats";
-import { useMarketStore } from "../stores/transactionStore";
+import { TransactionStats } from "../components/transaction/TransactionStats";
+import { useTransactionStore } from "../stores/transactionStore";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
-export default function MarketPage() {
-  const { fetchTransactions } = useMarketStore();
+export default function TransactionPage() {
+  const { fetchTransactions } = useTransactionStore();
 
   useEffect(() => {
     fetchTransactions();
@@ -31,7 +31,7 @@ export default function MarketPage() {
 
       {/* Stats Section */}
       <div className="text-white">
-        <MarketStats />
+        <TransactionStats />
       </div>
 
       {/* Main Content */}
@@ -42,7 +42,7 @@ export default function MarketPage() {
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-red-500">HISTORIAL DE TRANSACCIONES</h2>
               <span className="text-sm px-3 py-1 bg-red-900/50 text-white rounded-full border border-red-600">
-                {useMarketStore.getState().transactions.length} REGISTROS
+                {useTransactionStore.getState().transactions.length} REGISTROS
               </span>
             </div>
             <TransactionLog />
