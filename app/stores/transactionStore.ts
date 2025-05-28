@@ -28,17 +28,25 @@ export const useTransactionStore = create<TransactionState>((set) => ({
     }
   },
   addTransaction: async (transaction) => {
-    set({ loading: true });
-    try {
-      const newTransaction = await createTransaction(transaction);
-      set((state) => ({
-        transactions: [...state.transactions, newTransaction],
-        loading: false,
-      }));
-    } catch (error) {
-      set({ error: "Failed to add transaction", loading: false });
-    }
-  },
+  set({ loading: true });
+  try {
+    const newTransaction = await createTransaction(transaction);
+
+    // Forzar que amount sea un número
+    const parsedTransaction = {
+      ...newTransaction,
+      amount: Number(newTransaction.amount),
+    };
+
+    set((state) => ({
+      transactions: [...state.transactions, parsedTransaction],
+      loading: false,
+    }));
+  } catch (error) {
+    set({ error: "Failed to add transaction", loading: false });
+  }
+},
+
   changeTransactionStatus: async (transactionId, status) => {
     set({ loading: true });
     try {

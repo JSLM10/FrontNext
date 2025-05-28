@@ -49,7 +49,7 @@ export function TransactionLog() {
               </TableCell>
               <TableCell className="text-white">{transaction.item}</TableCell>
               <TableCell className="text-white">
-                ${transaction.amount.toFixed(2)}
+                ${Number(transaction.amount).toFixed(2)}
               </TableCell>
               <TableCell className={getStatusColor(transaction.status)}>
                 {transaction.status === "Completed" ? "COMPLETADA" : 

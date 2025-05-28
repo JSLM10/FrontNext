@@ -45,7 +45,7 @@ export function TransactionStats() {
           <AlertCircle className="h-4 w-4 text-yellow-400" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold text-white">${totalAmount.toFixed(2)}</div>
+          <div className="text-2xl font-bold text-white">${Number(totalAmount).toFixed(2)}</div>
         </CardContent>
       </Card>
     </div>
