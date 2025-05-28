@@ -24,29 +24,34 @@ export const useTransactionStore = create<TransactionState>((set) => ({
       const transactions = await getTransactions();
       set({ transactions, loading: false });
     } catch (error) {
-      set({ error: "Failed to fetch transactions", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to fetch transactions", 
+        loading: false 
+      });
     }
   },
   addTransaction: async (transaction) => {
-  set({ loading: true });
-  try {
-    const newTransaction = await createTransaction(transaction);
+    set({ loading: true });
+    try {
+      const newTransaction = await createTransaction(transaction);
 
-    // Forzar que amount sea un número
-    const parsedTransaction = {
-      ...newTransaction,
-      amount: Number(newTransaction.amount),
-    };
+      // Forzar que amount sea un número
+      const parsedTransaction = {
+        ...newTransaction,
+        amount: Number(newTransaction.amount),
+      };
 
-    set((state) => ({
-      transactions: [...state.transactions, parsedTransaction],
-      loading: false,
-    }));
-  } catch (error) {
-    set({ error: "Failed to add transaction", loading: false });
-  }
-},
-
+      set((state) => ({
+        transactions: [...state.transactions, parsedTransaction],
+        loading: false,
+      }));
+    } catch (error) {
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to add transaction", 
+        loading: false 
+      });
+    }
+  },
   changeTransactionStatus: async (transactionId, status) => {
     set({ loading: true });
     try {
@@ -58,7 +63,10 @@ export const useTransactionStore = create<TransactionState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      set({ error: "Failed to update transaction", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to update transaction", 
+        loading: false 
+      });
     }
   },
 }));

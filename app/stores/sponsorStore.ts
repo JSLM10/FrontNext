@@ -21,7 +21,10 @@ export const useSponsorStore = create<SponsorState>((set) => ({
       const sponsors = await getSponsors();
       set({ sponsors, loading: false });
     } catch (error) {
-      set({ error: "Failed to fetch sponsors", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to fetch sponsors", 
+        loading: false 
+      });
     }
   },
   addSponsor: async (sponsor) => {
@@ -33,7 +36,10 @@ export const useSponsorStore = create<SponsorState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      set({ error: "Failed to add sponsor", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to add sponsor", 
+        loading: false 
+      });
     }
   },
   makeDonation: async (sponsorId, items) => {
@@ -47,7 +53,10 @@ export const useSponsorStore = create<SponsorState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      set({ error: "Failed to make donation", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to make donation", 
+        loading: false 
+      });
     }
   },
 }));

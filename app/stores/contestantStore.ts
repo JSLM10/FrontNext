@@ -20,7 +20,10 @@ export const useContestantStore = create<ContestantState>((set) => ({
       const contestants = await getContestants();
       set({ contestants, loading: false });
     } catch (error) {
-      set({ error: "Failed to fetch contestants", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to fetch contestants", 
+        loading: false 
+      });
     }
   },
   addContestant: async (contestant) => {
@@ -32,7 +35,10 @@ export const useContestantStore = create<ContestantState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      set({ error: "Failed to add contestant", loading: false });
+      set({ 
+        error: error instanceof Error ? error.message : "Failed to add contestant", 
+        loading: false 
+      });
     }
   },
 }));
