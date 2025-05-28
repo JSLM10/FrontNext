@@ -62,7 +62,6 @@ export default function SponsorsPage() {
         </div>
       </div>
 
-      /* Footer Note */
       <div className="text-center text-sm text-gray-400 mt-12">
         <p>Los patrocinadores desleales serán convertidos en contendientes</p>
       </div>

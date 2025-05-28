@@ -83,34 +83,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-function FightCard({ fighters, date, lethal }: { fighters: [string, string], date: string, lethal: boolean }) {
-  return (
-    <div className="bg-black/70 border border-red-900/50 rounded-xl overflow-hidden hover:border-red-600 transition-all hover:scale-105">
-      <div className="p-6">
-        <div className="flex flex-col items-center mb-6">
-          <span className="text-xl font-bold text-white">{fighters[0]}</span>
-          <div className="my-2 flex items-center">
-            <div className="h-px w-8 bg-red-500"></div>
-            <span className="mx-3 text-red-500 font-bold">VS</span>
-            <div className="h-px w-8 bg-red-500"></div>
-          </div>
-          <span className="text-xl font-bold text-white">{fighters[1]}</span>
-        </div>
-        
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-400">Fecha:</span>
-          <span className="text-white">{new Date(date).toLocaleDateString()}</span>
-        </div>
-        
-        <div className="flex justify-between text-sm mt-4">
-          <span className="text-gray-400">Tipo:</span>
-          <span className={lethal ? "text-red-500" : "text-green-500"}>
-            {lethal ? "COMBATE MORTAL" : "SIN MUERTE"}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
