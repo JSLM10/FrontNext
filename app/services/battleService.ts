@@ -1,21 +1,36 @@
 import apiClient from "../api/apiClient";
-import { Battle } from "../schemas/Battle/battle";
+import { Battle, BattleSchema } from "../schemas/Battle/battle";
 
 export const getBattles = async (): Promise<Battle[]> => {
   const response = await apiClient.get("/battles");
-  return response.data;
+  return BattleSchema.array().parse(response.data);
 };
 
-export const createBattle = async (battle: Omit<Battle, "id">) => {
-  const response = await apiClient.post("/battles", battle);
-  return response.data;
-};
-
-export const scheduleBattle = async (contestant1Id: string, contestant2Id: string, date: string) => {
-  const response = await apiClient.post("/battles/schedule", {
-    contestant_1: contestant1Id,
-    contestant_2: contestant2Id,
-    date,
+export const createBattle = async (battle: Omit<Battle, "id">): Promise<Battle> => {
+  const response = await apiClient.post("/battles", {
+    ...battle,
+    date: new Date(battle.date).toISOString()
   });
-  return response.data;
+  return BattleSchema.parse(response.data);
+};
+
+export const scheduleBattle = async (
+  contestant1Id: string,
+  contestant2Id: string,
+  date: string
+): Promise<Battle> => {
+  if (contestant1Id === contestant2Id) {
+    throw new Error("No puede seleccionar el mismo contendiente para ambos lados");
+  }
+
+  const response = await apiClient.post("/battles", {
+    contestant_1_id: contestant1Id,
+    contestant_2_id: contestant2Id,
+    date: new Date(date).toISOString(),
+    death_occurred: false,
+    injuries: null,
+    winner_id: null
+  });
+
+  return BattleSchema.parse(response.data);
 };

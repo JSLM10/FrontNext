@@ -110,22 +110,25 @@ export function AddContestantForm() {
           name="dictatorId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Dictador Responsable</FormLabel>
+              <FormLabel className="text-white">Dictador Responsable</FormLabel>
               <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
-                  <SelectTrigger>
+                  <SelectTrigger className="bg-gray-800 border-red-600 text-white placeholder-gray-400 focus:ring-red-600 focus:border-red-600">
                     <SelectValue placeholder="Selecciona un dictador" />
-                  </SelectTrigger>
+                  </SelectTrigger >
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="bg-gray-900 border-red-600 text-white">
                   {dictators.map((dictator) => (
-                    <SelectItem key={dictator.id} value={dictator.id}>
-                      {dictator.name}
+                    <SelectItem key={dictator.id} 
+                    value={dictator.id}
+                    className="text-white hover:bg-gray-800 focus:bg-gray-800">
+                      {dictator.name
+                      }
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-red-400" />
             </FormItem>
           )}
         />
@@ -138,9 +141,12 @@ export function AddContestantForm() {
             <FormItem>
               <FormLabel>Fuerza</FormLabel>
               <FormControl>
-                <Input type="number" min={1} max={100} {...field} />
+                <Input type="number" 
+                min={1} max={100} {...field} 
+                onChange={(e) => field.onChange(Number(e.target.value))}
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-red-400"/>
             </FormItem>
           )}
         />
@@ -153,7 +159,11 @@ export function AddContestantForm() {
             <FormItem>
               <FormLabel>Agilidad</FormLabel>
               <FormControl>
-                <Input type="number" min={1} max={100} {...field} />
+                <Input type="number" 
+                min={1} max={100} {...field} 
+                 onChange={(e) => field.onChange(Number(e.target.value))}
+                />
+                
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -168,7 +178,8 @@ export function AddContestantForm() {
             <FormItem>
               <FormLabel>Victorias</FormLabel>
               <FormControl>
-                <Input type="number" min={0} {...field} />
+                <Input type="number" min={0} {...field} 
+                onChange={(e) => field.onChange(Number(e.target.value))}/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -183,7 +194,8 @@ export function AddContestantForm() {
             <FormItem>
               <FormLabel>Derrotas</FormLabel>
               <FormControl>
-                <Input type="number" min={0} {...field} />
+                <Input type="number" min={0} {...field} 
+                onChange={(e) => field.onChange(Number(e.target.value))}/>
               </FormControl>
               <FormMessage />
             </FormItem>

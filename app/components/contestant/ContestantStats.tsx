@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ContestantStats() {
   const { contestants } = useContestantStore();
-
+  console.log("Contestants:", contestants);
   const aliveCount = contestants.filter(c => c.status === "Alive").length;
   const deadCount = contestants.filter(c => c.status === "Dead").length;
   const escapedCount = contestants.filter(c => c.status === "Escaped").length;

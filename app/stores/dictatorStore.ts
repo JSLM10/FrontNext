@@ -15,17 +15,16 @@ export const useDictatorStore = create<DictatorState>((set) => ({
   dictators: [],
   loading: false,
   error: null,
-
   fetchDictators: async () => {
     set({ loading: true });
     try {
       const dictators = await getDictators();
       set({ dictators, loading: false });
     } catch (error) {
+      console.error("Error al obtener dictadores:", error);
       set({ error: "Failed to fetch dictators", loading: false });
     }
   },
-
   addDictator: async (dictator) => {
     set({ loading: true });
     try {
@@ -35,11 +34,10 @@ export const useDictatorStore = create<DictatorState>((set) => ({
         loading: false,
       }));
     } catch (error) {
-      console.error("ERROR EN addDictator:", error);
+      console.error("Error al agregar dictador:", error);
       set({ error: "Failed to add dictator", loading: false });
     }
   },
-
   assignSlavesToDictator: async (dictatorId, count) => {
     set({ loading: true });
     try {
@@ -51,6 +49,7 @@ export const useDictatorStore = create<DictatorState>((set) => ({
         loading: false,
       }));
     } catch (error) {
+      console.error("Error al asignar esclavos:", error);
       set({ error: "Failed to assign slaves", loading: false });
     }
   },
